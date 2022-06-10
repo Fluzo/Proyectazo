@@ -1,0 +1,8 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide text-center mx-4" *ngFor="let bonsai of bonsais">
+            <img class="imagen img-fluid" src="{{bonsai.imagen}}">
+            <button class="btn btn-dark oculto">{{bonsai.nombre}}</button>
+        </div>
+    </div>
+</div>

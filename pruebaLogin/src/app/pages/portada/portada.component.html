@@ -1,0 +1,55 @@
+<div class="animate__animated animate__fadeIn">
+    <div class="text-center">
+        <img src="assets/img/portada.jpg" class="img-fluid opacity-75" alt="...">
+    </div>
+
+    <div class="text-center">
+        <img src="assets/img/trasplante.jpg" class="img-fluid opacity-75" alt="...">
+        <img src="assets/img/poda.jpg" class="img-fluid opacity-75" alt="...">
+    </div>
+
+    <div class="titulo">
+        <p>BONSAIS</p>
+    </div>
+
+    <div class="text-center button-container cajaImagen">
+        <img src="assets/img/bonsai.jpg" class="img-fluid" alt="...">
+        <button type="button" class="btn btn-light btn-lg verMas">VER MÁS</button>
+    </div>
+
+    <hr>
+
+    <app-swiper [bonsais]="bonsais"></app-swiper>
+
+    <hr>
+
+    <div class="titulo">
+        <p>MACETAS</p>
+    </div>
+
+    <div class="text-center button-container">
+        <img src="assets/img/macetas.jpg" class="img-fluid" alt="...">
+        <button type="button" class="btn btn-light btn-lg verMas">VER MÁS</button>
+    </div>
+
+    <hr>
+
+    <app-swipper-macetas [macetas]="macetas"></app-swipper-macetas>
+
+    <hr>
+
+    <div class="titulo">
+        <p>SUSTRATOS</p>
+    </div>
+
+    <div class="text-center button-container">
+        <img src="assets/img/sustratos.png" class="img-fluid" alt="...">
+        <button type="button" class="btn btn-light btn-lg verMas">VER MÁS</button>
+    </div>
+
+    <hr>
+
+    <app-swipper-sustratos [sustratos]="sustratos"></app-swipper-sustratos>
+
+    <hr>
+</div>

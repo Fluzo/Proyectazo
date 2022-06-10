@@ -1,0 +1,75 @@
+<div class="animate__animated animate__fadeIn">
+
+    <h2 class="text-center" style="font-size: x-large;">Usuarios</h2>
+
+    <div class="centrar">
+
+        <a routerLink="../gestion" class="btn btn-dark me-5" style="font-weight: bold;">
+            <i class="fa-solid fa-angles-left"></i> VOLVER
+        </a>
+
+        <!-- Button trigger modal -->
+        <button class="btn btn-primary fw-bold me-5" type="button" data-bs-toggle="modal" data-bs-target="#crear">
+            <i class="fa-solid fa-plus"></i>
+            <i class="me-2"></i> Crear nuevo usuario
+        </button>
+
+    </div>
+
+    <table class="table table-primary table-striped mt-5">
+        <thead>
+            <tr>
+                <th scope="col">ID_USUARIO</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">PASSWORD</th>
+                <th scope="col">ID_PERFIL</th>
+                <th scope="col">PERFIL</th>
+                <th scope="col">ACTIVO</th>
+                <th scope="col">EDITAR</th>
+                <th scope="col">DESACTIVAR</th>
+                <th scope="col">ACTIVAR</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.iD_USUARIO}}</td>
+                <td>{{usuario.usuario}}</td>
+                <td>{{usuario.email}}</td>
+                <td>
+                    <button *ngIf="activar" type="button" style="margin-right: 5px;" class="btn btn-dark" (click)="activar = false">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </button>
+
+                    <button *ngIf="!activar" type="button" style="margin-right: 5px;" class="btn btn-dark" (click)="activar = true">
+                        <i class="fa-solid fa-eye"></i>
+                    </button> {{usuario.password | contrasena: activar}}
+
+                </td>
+                <td>{{usuario.iD_PERFIL}}</td>
+                <td>{{usuario.perfil}}</td>
+                <td>{{usuario.activo}}</td>
+                <td>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editar" (click)="getUsuario(usuario.iD_USUARIO)">
+                        <i class="fa fa-pen"></i>
+                   </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="desactivarUser( usuario.iD_USUARIO )">
+                        <i class="fa fa-trash"></i>
+                   </button>
+                </td>
+                <td>
+                    <button class="btn btn-success" (click)="activarUser( usuario.iD_USUARIO )">
+                        <i class="fa-solid fa-check"></i>
+                   </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-modal-crear-usuario></app-modal-crear-usuario>
+
+<app-modal-editar-usuario (actualizar)="actualizarDatos($event)"></app-modal-editar-usuario>

@@ -1,0 +1,150 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --background-color: white;
+    --social: black;
+    --text-color: black;
+    --boton-color: rgb(77, 76, 76);
+    --boton-background: transparent;
+    --boton-borde: black:
+}
+
+body {
+    background-color: var(--background-color);
+    transition: 2s;
+}
+
+
+/* .overlay {
+    background-color: white;
+} */
+
+.logo {
+    margin-top: 20px;
+    width: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nombre {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    color: var(--text-color);
+}
+
+.social {
+    margin-right: 5px;
+    font-size: large;
+    color: var(--social);
+}
+
+.cesta {
+    position: absolute;
+    left: 87%;
+    font-size: large;
+    color: var(--social);
+}
+
+.busqueda {
+    position: absolute;
+    left: 85%;
+    font-size: large;
+    color: var(--social);
+}
+
+.navbar {
+    position: sticky;
+}
+
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.nav-item {
+    font-weight: bold;
+}
+
+.dropdown-item {
+    font-weight: bold;
+}
+
+.text-center {
+    margin-top: 25px;
+}
+
+.button-container {
+    display: inline-block;
+    position: relative;
+}
+
+.verMas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: grey;
+    border-radius: 1.5em;
+}
+
+.swiper-container {
+    margin-top: 35px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    width: 250px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    transition: .5s all ease;
+}
+
+.swiper-slide:hover .imagen {
+    opacity: 0.3;
+}
+
+.oculto {
+    opacity: 0;
+    position: absolute;
+    background-color: var(--boton-background);
+    color: var(--boton-color);
+    border-color: var(--boton-borde);
+}
+
+.swiper-slide:hover .oculto {
+    opacity: 1;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--text-color);
+}
+
+.volver {
+    position: absolute;
+    margin-top: 15%;
+}
+
+.centrar {
+    /* border: 1px solid red; */
+    transform: translate(15%);
+}

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top animate__animated animate__fadeIn">
+    <div class="container-fluid">
+
+        <button routerLink="../login" class="btn btn-secundary" style="font-weight: bold;" *ngIf="!user.logged">
+            INICIA SESIÓN
+        </button>
+
+        <button class="btn btn-danger" style="font-weight: bold;" *ngIf="user.logged" (click)="logout()">
+            CERRAR SESIÓN
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+                <li class="nav-item dropdown">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            BONSAIS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Según tamaño</a></li>
+                            <li><a class="dropdown-item" href="#">Según forma</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            MACETAS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-secondary" href="#">Chinas</a></li>
+                            <li><a class="dropdown-item" href="#">Japonesas</a></li>
+                            <li><a class="dropdown-item" href="#">De Autor</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        SUSTRATOS
+                    </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown ">
+                            <li><a class="dropdown-item" href="#">Akadama</a></li>
+                            <li><a class="dropdown-item" href="#">kiryuzuna</a></li>
+                            <li><a class="dropdown-item" href="#">Abonado</a></li>
+                            <li><a class="dropdown-item" href="#">Otros</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        VARIOS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                            <li><a class="dropdown-item" href="#">Libros</a></li>
+                            <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OUTLET</a>
+                    </li>
+            </ul>
+
+
+            <a routerLink="../gestion">
+                <!-- Rtuta de area de gestion, solo puede acceder el admino el gestor -->
+                <i class="fa-solid fa-people-roof" style="color: black; margin-left: 5px;"></i>
+            </a>
+        </div>
+    </div>
+</nav>

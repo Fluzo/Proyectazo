@@ -1,0 +1,71 @@
+.noche-dia {
+    display: block;
+    margin: 20px 0;
+    height: 31px;
+    width: 60px;
+    /* border: 2px solid #4672fe; */
+    border: 2px solid purple;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+.boton-oscuro {
+    position: absolute;
+    right: 25%;
+    bottom: 82%;
+}
+
+.noche-dia-bola {
+    content: "";
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 1px;
+    left: 1px;
+    border-radius: 50%;
+    /* background: #4672fe; */
+    background: purple;
+    border: transparent;
+    z-index: 99;
+    transition: 0.1s ease all;
+}
+
+input:checked+.noche-dia-bola {
+    left: 30px;
+}
+
+
+/* .noche {
+    left: 30px;
+} */
+
+.moon,
+.sun {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    background-color: white;
+}
+
+.sun {
+    left: 5px;
+}
+
+.moon {
+    right: 5px;
+}

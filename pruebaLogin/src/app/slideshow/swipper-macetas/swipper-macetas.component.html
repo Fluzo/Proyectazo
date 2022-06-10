@@ -1,0 +1,8 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide text-center mx-4" *ngFor="let maceta of macetas">
+            <img class="imagen img-fluid" src="{{maceta.imagen}}">
+            <button class="btn btn-outline-dark oculto">{{maceta.nombre}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="modal fade" id="editarPedido" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Editar pedido</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="guardar()" [formGroup]="formulario">
+                    <div class="mb-3">
+                        <label class="form-label">Dirección</label>
+                        <input class="form-control" name="direccion" placeholder="Dirección" formControlName="direccion" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Piso</label>
+                        <input class="form-control" name="piso" aria-describedby="emailHelp" placeholder="Piso" formControlName="piso">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Puerta</label>
+                        <input class="form-control" name="puerta" placeholder="Puerta" formControlName="puerta">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Código postal</label>
+                        <input class="form-control" name="cod_postal" placeholder="Código postal" formControlName="codigO_POSTAL">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre cliente</label>
+                        <input class="form-control" name="nombrE_CLIENTE" placeholder="Nombre Cliente" formControlName="nombrE_CLIENTE">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono</label>
+                        <input class="form-control" name="telefono" placeholder="Teléfono" formControlName="telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Montante</label>
+                        <input class="form-control" name="montante" placeholder="Montante" formControlName="montante">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Estado</label>
+                        <select formControlName="iD_ESTADO" class="form-select">
+                            <option value="" default disabled>--Elige Estado--</option>
+                            <option *ngFor="let estado of estados" [value]="estado.iD_ESTADO">{{estado.nombre}}</option>
+                        </select>
+                    </div>
+                    <!-- (click)="refresh()" -->
+                    <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="refresh()">Guardar</button>
+                    <button type="button" class="btn btn-danger" style="margin-left: 294px;" data-bs-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

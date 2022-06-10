@@ -1,0 +1,49 @@
+<div class="modal fade" id="editarArticulo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Editar Usuario</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="guardar()" [formGroup]="formulario">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input class="form-control" name="nombre" placeholder="Nombre" formControlName="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Alto</label>
+                        <input class="form-control" name="alto" placeholder="Alto" formControlName="alto">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ancho</label>
+                        <input class="form-control" name="ancho" placeholder="Ancho" formControlName="ancho">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Largo</label>
+                        <input class="form-control" name="largo" placeholder="Largo" formControlName="largo">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Peso</label>
+                        <input class="form-control" name="peso" placeholder="Peso" formControlName="peso">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fabricante</label>
+                        <input class="form-control" name="fabricante" placeholder="Fabricante" formControlName="fabricante">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Descripción</label>
+                        <input class="form-control" name="descripcion" placeholder="Descripción" formControlName="descripcion">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio</label>
+                        <input class="form-control" name="precio" placeholder="Precio" formControlName="precio">
+                    </div>
+
+                    <!--  (click)="refresh()" -->
+                    <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="refresh()">Guardar</button>
+                    <button type="button" class="btn btn-danger" style="margin-left: 294px;" data-bs-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>

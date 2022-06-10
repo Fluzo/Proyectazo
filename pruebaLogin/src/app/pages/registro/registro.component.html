@@ -1,0 +1,73 @@
+<div class="container">
+    <form class="custom-form" [formGroup]="formulario" (ngSubmit)="guardar()">
+        <h1 class="card-title text-center mb-5 fw-dark fs-5">Regístrate</h1>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingNombre" placeholder="nombre" formControlName="usuario" required [class.is-invalid]="nombreNoValido">
+            <label for="floatingInput">Nombre de usuario</label>
+            <small *ngIf="nombreNoValido" class="text-danger">Nombre no válido</small>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingCorreo" placeholder="correo" formControlName="email" required [class.is-invalid]="correoNoValido">
+            <label for="floatingInput">Correo eléctrónico</label>
+            <small *ngIf="correoNoValido" class="text-danger">Correo no válido</small>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="contrasena" formControlName="password" required [class.is-invalid]="contrasenaNoValido">
+            <label for="floatingPassword">Contraseña</label>
+            <small *ngIf="contrasenaNoValido" class="text-danger">Contrasena no válido</small>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword2" placeholder="contrasena2" formControlName="password2" required [class.is-invalid]="contrasena2NoValido">
+            <label for="floatingPassword">Repite contraseña</label>
+            <small *ngIf="contrasena2NoValido" class="text-danger">La contraseña no coincide</small>
+        </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+            <label class="form-check-label" for="rememberPasswordCheck">Recordar contraseña</label>
+            <a routerLink="../login" class="btn btn-link">¿Ya tienes cuenta?</a>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Registrarse</button>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="d-grid mb-2">
+            <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
+                            <i class="fab fa-google me-2"></i> Registrarse con Google</button>
+        </div>
+
+        <div class="d-grid">
+            <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
+                            <i class="fab fa-facebook-f me-2"></i> Registrarse con Facebook</button>
+        </div>
+
+    </form>
+</div>
+
+
+<div class="volver">
+    <button class="btn btn-primary" routerLink="/home">
+        Volver a la tienda
+    </button>
+</div>
+
+
+<hr>
+
+<pre>
+    estado : {{ formulario.valid}}
+</pre>
+<br>
+<pre>
+    status: {{formulario.status}}
+</pre>
+
+<pre>
+    {{formulario.value | json}}
+</pre>

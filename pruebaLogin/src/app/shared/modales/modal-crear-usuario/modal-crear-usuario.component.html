@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="crear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Crear Usuario</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="guardar()" [formGroup]="formulario">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input class="form-control" name="usuario" placeholder="Nombre" formControlName="usuario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" formControlName="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Id Perfil</label>
+                        <select formControlName="iD_PERFIL" class="form-select">
+                            <option value="" default disabled>--Elige Permiso--</option>
+                            <option *ngFor="let perfil of perfiles" [value]="perfil.idPerfil">{{perfil.perfil}}</option>
+                        </select>
+                    </div>
+                    <!--  (click)="refresh()" -->
+                    <button type="submit" class="btn btn-success" (click)="refresh()">Guardar</button>
+                    <button type="button" class="btn btn-danger" style="margin-left: 294px;" data-bs-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

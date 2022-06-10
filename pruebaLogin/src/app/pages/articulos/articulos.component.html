@@ -1,0 +1,75 @@
+<div class="animate__animated animate__fadeIn">
+    <h2 class="text-center" style="font-size: x-large;">Artículos</h2>
+    <div class="centrar">
+
+        <a routerLink="../gestion" class="btn btn-dark me-5" style="font-weight: bold;">
+            <i class="fa-solid fa-angles-left"></i> VOLVER
+        </a>
+
+        <button class="btn btn-primary fw-bold me-5" type="button" data-bs-toggle="modal" data-bs-target="#crearArticulo">
+            <i class="fa-solid fa-plus"></i>
+            <i class=""></i> Crear nuevo artículo
+        </button>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+
+            <table class="table table-info table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">ID ARTICULO</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">ALTO</th>
+                        <th scope="col">ANCHO</th>
+                        <th scope="col">LARGO</th>
+                        <th scope="col">PESO</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">FABRICANTE</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">ACTIVO</th>
+                        <th scope="col">EDITAR</th>
+                        <th scope="col">DESACTIVAR</th>
+                        <th scope="col">ACTIVAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let articulo of articulos">
+                        <td>{{articulo.iD_ARTICULO}}</td>
+                        <td>{{articulo.nombre}}</td>
+                        <td>{{articulo.alto}}</td>
+                        <td>{{articulo.ancho}}</td>
+                        <td>{{articulo.largo}}</td>
+                        <td>{{articulo.peso}}</td>
+                        <td>{{articulo.descripcion}}</td>
+                        <td>{{articulo.fabricante}}</td>
+                        <td>{{articulo.precio}}</td>
+                        <td>{{articulo.activo}}</td>
+                        <td>
+                            <button class="btn btn-warning fw-bold me-5" data-bs-toggle="modal" data-bs-target="#editarArticulo" (click)="getArticulo(articulo.iD_ARTICULO)">
+                                <i class="fa fa-pen"></i>
+                           </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="desactivarArticulo( articulo.iD_ARTICULO )">
+                                <i class="fa fa-trash"></i>
+                           </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="activarArticulo( articulo.iD_ARTICULO )">
+                                <i class="fa-solid fa-check"></i>
+                           </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<app-modal-crear-articulo></app-modal-crear-articulo>
+
+<app-modal-editar-articulo></app-modal-editar-articulo>

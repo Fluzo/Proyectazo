@@ -1,0 +1,47 @@
+<div class="container">
+    <form class="custom-form" [formGroup]="formLogin">
+        <h1 class="card-title text-center mb-5 fw-dark fs-5">Iniciar sesión</h1>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="correo" formControlName="email" required [class.is-invalid]="correoNoValido">
+            <small *ngIf="correoNoValido" class="text-danger">Correo no válido</small>
+            <label for="floatingInput">Correo eléctrónico</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" required [class.is-invalid]="contrasenaNoValido">
+            <small *ngIf="contrasenaNoValido" class="text-danger">Contraseña no válida</small>
+            <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="form-check mb-3">
+            <input checked="recordarme" class="form-check-input" type="checkbox" value="" id="rememberUserCheck">
+            <label class="form-check-label" for="rememberUserCheck">Recordar usuario</label>
+            <a routerLink="../registro" class="btn btn-link">¿No tienes cuenta?</a>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" (click)="guardar()">Ingresar</button>
+        </div>
+    </form>
+</div>
+
+<div class="volver">
+    <button class="btn btn-primary" routerLink="/home">
+        Volver a la tienda
+    </button>
+</div>
+
+<hr>
+
+
+
+
+<pre>
+    estado : {{ formLogin.valid}}
+</pre>
+<br>
+<pre>
+    status: {{formLogin.status}}
+</pre>
+
+<pre>
+    {{formLogin.value | json}}
+</pre>

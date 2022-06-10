@@ -1,0 +1,66 @@
+<div class="animate__animated animate__fadeIn">
+    <h2 class="text-center" style="font-size: x-large;">Pedidos</h2>
+
+    <div class="centrar">
+
+        <a routerLink="../gestion" class="btn btn-dark me-5" style="font-weight: bold;">
+            <i class="fa-solid fa-angles-left"></i> VOLVER
+        </a>
+
+        <button class="btn btn-primary fw-bold me-5" type="button" data-bs-toggle="modal" data-bs-target="#crearPedido">
+            <i class="fa-solid fa-plus"></i>
+            <i class="me-2"></i> Crear nuevo pedido
+        </button>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+
+            <table class="table table-info table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">ID_PEDIDO</th>
+                        <th scope="col">COD_PEDIDO</th>
+                        <th scope="col">DIRECCION</th>
+                        <th scope="col">PISO</th>
+                        <th scope="col">PUERTA</th>
+                        <th scope="col">COD_POSTAL</th>
+                        <th scope="col">CLIENTE</th>
+                        <th scope="col">TELEFONO</th>
+                        <th scope="col">MONTANTE</th>
+                        <th scope="col">ID_ESTADO</th>
+                        <th scope="col">ESTADO</th>
+                        <th scope="col">EDITAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                        <td>{{pedido.iD_PEDIDO}}</td>
+                        <td>{{pedido.coD_PEDIDO}}</td>
+                        <td>{{pedido.direccion}}</td>
+                        <td>{{pedido.piso}}</td>
+                        <td>{{pedido.puerta}}</td>
+                        <td>{{pedido.codigO_POSTAL}}</td>
+                        <td>{{pedido.nombrE_CLIENTE}}</td>
+                        <td>{{pedido.telefono}}</td>
+                        <td>{{pedido.montante}}</td>
+                        <td>{{pedido.iD_ESTADO}}</td>
+                        <td>{{estados[pedido.iD_ESTADO].nombre}}</td>
+                        <!-- <td>{{estados[pedido.iD_ESTADO].nombre}}</td> -->
+                        <td>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarPedido" (click)="getPedido(pedido.iD_PEDIDO)">
+                                <i class="fa fa-pen"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<app-modal-crear-pedido></app-modal-crear-pedido>
+
+<app-modal-editar-pedido></app-modal-editar-pedido>
